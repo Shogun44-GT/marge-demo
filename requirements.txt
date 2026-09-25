@@ -1,0 +1,8 @@
+# Dépendances de la démo Marge (Streamlit Community Cloud, 100 % gratuit).
+streamlit
+pandas
+SQLAlchemy
+sqlparse
+python-dotenv
+groq
+anthropic
