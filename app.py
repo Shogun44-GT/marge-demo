@@ -78,25 +78,25 @@ header[data-testid="stHeader"] {visibility: hidden;}
 /* --- Barre de marque --- */
 .brand {display: flex; align-items: center; justify-content: space-between;
         margin-bottom: 2.4rem;}
-.wordmark {font-size: 1.5rem; font-weight: 800; letter-spacing: 0.14em; color: #F5F7FA;}
-.wordmark .dot {color: #E9B44C;}
+.wordmark {font-size: 1.5rem; font-weight: 800; letter-spacing: 0.14em; color: #FFFFFF;}
+.wordmark .dot {color: #57D9A3;}
 .badges {display: flex; gap: 0.5rem;}
 .badge {font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
         padding: 0.38rem 0.75rem; border-radius: 999px;
-        border: 1px solid #2A3342; color: #9AA4B2; text-transform: uppercase;}
-.badge.gold {border-color: #E9B44C; color: #E9B44C;}
+        border: 1px solid #1E4A3F; color: #93B5A8; text-transform: uppercase;}
+.badge.gold {border-color: #57D9A3; color: #57D9A3;}
 
 /* --- Hero --- */
-.eyebrow {color: #E9B44C; font-weight: 700; letter-spacing: 0.2em;
+.eyebrow {color: #57D9A3; font-weight: 700; letter-spacing: 0.2em;
           font-size: 0.72rem; text-transform: uppercase; margin-bottom: 0.7rem;}
 .hero-title {font-size: 2.7rem; line-height: 1.12; font-weight: 800;
-             color: #F5F7FA; margin: 0 0 0.8rem 0;}
-.hero-sub {color: #9AA4B2; font-size: 1.07rem; line-height: 1.65;
+             color: #FFFFFF; margin: 0 0 0.8rem 0;}
+.hero-sub {color: #C9D9D1; font-size: 1.07rem; line-height: 1.65;
            margin-bottom: 1.9rem; max-width: 640px;}
-.hero-sub strong {color: #D5DBE4; font-weight: 600;}
+.hero-sub strong {color: #FFFFFF; font-weight: 600;}
 
 /* --- Libellés de section --- */
-.section-label {color: #E9B44C; font-size: 0.75rem; font-weight: 700;
+.section-label {color: #57D9A3; font-size: 0.75rem; font-weight: 700;
                 letter-spacing: 0.18em; text-transform: uppercase;
                 margin: 1.6rem 0 0.8rem 0;}
 
@@ -112,41 +112,41 @@ header[data-testid="stHeader"] {visibility: hidden;}
     min-height: 3.4rem; margin-top: 0.4rem;}
 
 /* --- Carte KPI --- */
-.kpi {background: linear-gradient(135deg, #161D29 0%, #1B2434 100%);
-      border: 1px solid #2A3342; border-left: 4px solid #E9B44C;
+.kpi {background: linear-gradient(135deg, #0F3229 0%, #13453A 100%);
+      border: 1px solid #1E4A3F; border-left: 4px solid #1FA97A;
       border-radius: 14px; padding: 1.5rem 1.7rem; margin: 1.1rem 0;}
-.kpi-label {color: #9AA4B2; font-size: 0.8rem; font-weight: 600;
+.kpi-label {color: #93B5A8; font-size: 0.8rem; font-weight: 600;
             text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.45rem;}
-.kpi-value {font-size: 2.5rem; font-weight: 800; color: #F5F7FA; line-height: 1;}
+.kpi-value {font-size: 2.5rem; font-weight: 800; color: #FFFFFF; line-height: 1;}
 
 /* --- Étapes --- */
-.step-card {background: #121826; border: 1px solid #232C3D; border-radius: 14px;
+.step-card {background: #0E2D25; border: 1px solid #1C4438; border-radius: 14px;
             padding: 1.25rem 1.3rem; height: 100%;}
 .step-num {display: inline-flex; align-items: center; justify-content: center;
            width: 1.9rem; height: 1.9rem; border-radius: 999px;
-           background: rgba(233, 180, 76, 0.14); color: #E9B44C;
+           background: rgba(31, 169, 122, 0.16); color: #57D9A3;
            font-weight: 800; font-size: 0.95rem; margin-bottom: 0.7rem;}
-.step-title {font-weight: 700; color: #F5F7FA; margin-bottom: 0.35rem;}
-.step-text {color: #9AA4B2; font-size: 0.92rem; line-height: 1.55;}
-.step-text em {color: #C7CEDA;}
+.step-title {font-weight: 700; color: #FFFFFF; margin-bottom: 0.35rem;}
+.step-text {color: #9DB8AD; font-size: 0.92rem; line-height: 1.55;}
+.step-text em {color: #E4EFE9;}
 
 /* --- Pied de page --- */
-.footer {margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid #1E2634;
-         color: #6B7688; font-size: 0.82rem; text-align: center; line-height: 1.7;}
+.footer {margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid #1C4438;
+         color: #6E8A7F; font-size: 0.82rem; text-align: center; line-height: 1.7;}
 </style>
 """
 st.markdown(CSS, unsafe_allow_html=True)
 
 
 def _fmt(valeur) -> str:
-    """Formate un nombre à la française : 1 234,56."""
+    """Formate un nombre à la française : 1 234,56."""
     try:
         f = float(valeur)
     except (TypeError, ValueError):
         return str(valeur)
     if f.is_integer():
         return f"{int(f):,}".replace(",", " ")
-    return f"{f:,.2f}".replace(",", " ").replace(".", ",").replace(" ", " ")
+    return f"{f:,.2f}".replace(",", " ").replace(".", ",").replace(" ", " ")
 
 
 # --- En-tête de marque ---
@@ -249,9 +249,9 @@ if st.session_state.lancer:
         if len(df) > 1 and df.shape[1] >= 1:
             try:
                 if df.shape[1] >= 2:
-                    st.bar_chart(df.set_index(df.columns[0]), color="#E9B44C")
+                    st.bar_chart(df.set_index(df.columns[0]), color="#1FA97A")
                 else:
-                    st.bar_chart(df, color="#E9B44C")
+                    st.bar_chart(df, color="#1FA97A")
             except TypeError:
                 # Ancienne version de Streamlit : sans couleur personnalisée.
                 if df.shape[1] >= 2:
