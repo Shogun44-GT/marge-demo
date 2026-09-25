@@ -73,32 +73,32 @@ CSS = """
 footer {visibility: hidden;}
 header[data-testid="stHeader"] {visibility: hidden;}
 
-.block-container {max-width: 920px; padding-top: 2.2rem; padding-bottom: 2rem;}
+.block-container {max-width: 880px; padding-top: 3rem; padding-bottom: 2.5rem;}
 
 /* --- Barre de marque --- */
 .brand {display: flex; align-items: center; justify-content: space-between;
-        margin-bottom: 2.4rem;}
-.wordmark {font-size: 1.5rem; font-weight: 800; letter-spacing: 0.14em; color: #FFFFFF;}
-.wordmark .dot {color: #57D9A3;}
+        margin-bottom: 3rem;}
+.wordmark {font-size: 1.4rem; font-weight: 800; letter-spacing: 0.14em; color: #FFFFFF;}
+.wordmark .dot {color: #4ADE80;}
 .badges {display: flex; gap: 0.5rem;}
-.badge {font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-        padding: 0.38rem 0.75rem; border-radius: 999px;
-        border: 1px solid #1E4A3F; color: #93B5A8; text-transform: uppercase;}
-.badge.gold {border-color: #57D9A3; color: #57D9A3;}
+.badge {font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+        padding: 0.36rem 0.7rem; border-radius: 999px;
+        border: 1px solid #24302A; color: #8FA39A; text-transform: uppercase;}
+.badge.accent {border-color: #4ADE80; color: #4ADE80;}
 
 /* --- Hero --- */
-.eyebrow {color: #57D9A3; font-weight: 700; letter-spacing: 0.2em;
-          font-size: 0.72rem; text-transform: uppercase; margin-bottom: 0.7rem;}
-.hero-title {font-size: 2.7rem; line-height: 1.12; font-weight: 800;
-             color: #FFFFFF; margin: 0 0 0.8rem 0;}
-.hero-sub {color: #C9D9D1; font-size: 1.07rem; line-height: 1.65;
-           margin-bottom: 1.9rem; max-width: 640px;}
+.eyebrow {color: #4ADE80; font-weight: 700; letter-spacing: 0.2em;
+          font-size: 0.7rem; text-transform: uppercase; margin-bottom: 0.8rem;}
+.hero-title {font-size: 2.2rem; line-height: 1.2; font-weight: 800;
+             color: #FFFFFF; margin: 0 0 0.9rem 0;}
+.hero-sub {color: #A7B8B0; font-size: 1.02rem; line-height: 1.7;
+           margin-bottom: 2.2rem; max-width: 600px;}
 .hero-sub strong {color: #FFFFFF; font-weight: 600;}
 
 /* --- Libellés de section --- */
-.section-label {color: #57D9A3; font-size: 0.75rem; font-weight: 700;
+.section-label {color: #4ADE80; font-size: 0.72rem; font-weight: 700;
                 letter-spacing: 0.18em; text-transform: uppercase;
-                margin: 1.6rem 0 0.8rem 0;}
+                margin: 2.4rem 0 1rem 0;}
 
 /* --- Champ de question --- */
 .stTextInput > div > div > input {font-size: 1.05rem; border-radius: 12px;
@@ -109,30 +109,32 @@ header[data-testid="stHeader"] {visibility: hidden;}
     padding: 0.55rem 0.9rem; line-height: 1.35; white-space: normal; height: auto;
     min-height: 3.1rem;}
 .stButton > button[kind="primary"] {font-weight: 700; font-size: 1.02rem;
-    min-height: 3.4rem; margin-top: 0.4rem;}
+    min-height: 3.4rem; margin-top: 0.4rem;
+    background-color: #22C55E; color: #04120B; border: none;}
+.stButton > button[kind="primary"]:hover {background-color: #4ADE80; color: #04120B;}
 
 /* --- Carte KPI --- */
-.kpi {background: linear-gradient(135deg, #0F3229 0%, #13453A 100%);
-      border: 1px solid #1E4A3F; border-left: 4px solid #1FA97A;
-      border-radius: 14px; padding: 1.5rem 1.7rem; margin: 1.1rem 0;}
-.kpi-label {color: #93B5A8; font-size: 0.8rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.45rem;}
-.kpi-value {font-size: 2.5rem; font-weight: 800; color: #FFFFFF; line-height: 1;}
+.kpi {background: #111714;
+      border: 1px solid #1F2A25; border-left: 4px solid #22C55E;
+      border-radius: 14px; padding: 1.6rem 1.8rem; margin: 1.2rem 0;}
+.kpi-label {color: #8FA39A; font-size: 0.78rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem;}
+.kpi-value {font-size: 2.2rem; font-weight: 800; color: #FFFFFF; line-height: 1;}
 
 /* --- Étapes --- */
-.step-card {background: #0E2D25; border: 1px solid #1C4438; border-radius: 14px;
-            padding: 1.25rem 1.3rem; height: 100%;}
+.step-card {background: #101613; border: 1px solid #1C2621; border-radius: 14px;
+            padding: 1.3rem 1.35rem; height: 100%;}
 .step-num {display: inline-flex; align-items: center; justify-content: center;
            width: 1.9rem; height: 1.9rem; border-radius: 999px;
-           background: rgba(31, 169, 122, 0.16); color: #57D9A3;
+           background: rgba(74, 222, 128, 0.12); color: #4ADE80;
            font-weight: 800; font-size: 0.95rem; margin-bottom: 0.7rem;}
 .step-title {font-weight: 700; color: #FFFFFF; margin-bottom: 0.35rem;}
-.step-text {color: #9DB8AD; font-size: 0.92rem; line-height: 1.55;}
-.step-text em {color: #E4EFE9;}
+.step-text {color: #93A79D; font-size: 0.92rem; line-height: 1.6;}
+.step-text em {color: #DDE7E1;}
 
 /* --- Pied de page --- */
-.footer {margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid #1C4438;
-         color: #6E8A7F; font-size: 0.82rem; text-align: center; line-height: 1.7;}
+.footer {margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid #1C2621;
+         color: #64756D; font-size: 0.82rem; text-align: center; line-height: 1.7;}
 </style>
 """
 st.markdown(CSS, unsafe_allow_html=True)
@@ -155,7 +157,7 @@ st.markdown(
     <div class="brand">
       <div class="wordmark">MARGE<span class="dot">.</span></div>
       <div class="badges">
-        <span class="badge gold">Démo</span>
+        <span class="badge accent">Démo</span>
         <span class="badge">Lecture seule</span>
       </div>
     </div>
@@ -249,9 +251,9 @@ if st.session_state.lancer:
         if len(df) > 1 and df.shape[1] >= 1:
             try:
                 if df.shape[1] >= 2:
-                    st.bar_chart(df.set_index(df.columns[0]), color="#1FA97A")
+                    st.bar_chart(df.set_index(df.columns[0]), color="#22C55E")
                 else:
-                    st.bar_chart(df, color="#1FA97A")
+                    st.bar_chart(df, color="#22C55E")
             except TypeError:
                 # Ancienne version de Streamlit : sans couleur personnalisée.
                 if df.shape[1] >= 2:
