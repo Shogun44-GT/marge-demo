@@ -156,7 +156,7 @@ st.markdown(
       <div class="wordmark">MARGE<span class="dot">.</span></div>
       <div class="badges">
         <span class="badge gold">Démo</span>
-        <span class="badge">🔒 Lecture seule</span>
+        <span class="badge">Lecture seule</span>
       </div>
     </div>
     """,
@@ -167,10 +167,10 @@ st.markdown(
 st.markdown(
     """
     <div class="eyebrow">Démo interactive</div>
-    <h1 class="hero-title">Interrogez votre boutique<br>en français.</h1>
-    <p class="hero-sub">Marge comprend votre question, génère une requête
-    <strong>sécurisée en lecture seule</strong>, et vous donne le chiffre —
-    <strong>sans tableur, sans SQL, sans comptable</strong>.</p>
+    <h1 class="hero-title">Vos chiffres, en français,<br>en 10 secondes.</h1>
+    <p class="hero-sub">Posez votre question de gestion comme vous la diriez à votre comptable.
+    Marge la traduit en requête <strong>sécurisée en lecture seule</strong> et vous donne
+    le chiffre — <strong>sans tableur, sans SQL, sans comptable</strong>.</p>
     """,
     unsafe_allow_html=True,
 )
@@ -188,7 +188,7 @@ question = st.text_input(
 )
 st.session_state.question = question
 
-if st.button("Obtenir la réponse", type="primary", use_container_width=True):
+if st.button("Obtenir mon chiffre", type="primary", use_container_width=True):
     st.session_state.lancer = True
 
 st.markdown('<p class="section-label">Essayez une question</p>', unsafe_allow_html=True)
