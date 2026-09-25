@@ -107,7 +107,7 @@ header[data-testid="stHeader"] {visibility: hidden;}
 /* --- Boutons --- */
 .stButton > button {border-radius: 11px; font-weight: 500;
     padding: 0.55rem 0.9rem; line-height: 1.35; white-space: normal; height: auto;
-    min-height: 3.1rem;}
+    min-height: 3.4rem;}
 .stButton > button[kind="primary"] {font-weight: 700; font-size: 1.02rem;
     min-height: 3.4rem; margin-top: 0.4rem;
     background-color: #22C55E; color: #04120B; border: none;}
@@ -249,17 +249,20 @@ if st.session_state.lancer:
     else:
         st.dataframe(df, use_container_width=True)
         if len(df) > 1 and df.shape[1] >= 1:
+            donnees_graphique = (
+                df.set_index(df.columns[0]) if df.shape[1] >= 2 else df
+            )
             try:
-                if df.shape[1] >= 2:
-                    st.bar_chart(df.set_index(df.columns[0]), color="#22C55E")
-                else:
-                    st.bar_chart(df, color="#22C55E")
-            except TypeError:
-                # Ancienne version de Streamlit : sans couleur personnalisée.
-                if df.shape[1] >= 2:
-                    st.bar_chart(df.set_index(df.columns[0]))
-                else:
-                    st.bar_chart(df)
+                st.bar_chart(donnees_graphique, color="#22C55E")
+            except Exception:
+                # Le paramètre color n'est pas accepté par toutes les
+                # versions de Streamlit : on réessaie sans, et on renonce
+                # au graphique (le tableau reste affiché) plutôt que de
+                # faire planter l'appli.
+                try:
+                    st.bar_chart(donnees_graphique)
+                except Exception:
+                    pass
 
     bornes = extraire_bornes_dates(sql)
     if bornes:
